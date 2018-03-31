@@ -42,14 +42,16 @@ print("[INFO] loading images...")
 # grab the image paths and randomly shuffle them
 path = args["dataset"]
 data_list = os.listdir(path)
-#print(data_list)
+print("Categories:")
+print(data_list)
 count = 0
 for dataset in data_list:
 	#print(dataset)
 	dataset_path = os.path.join(path, dataset)
-	#print(dataset_path)
+	print(Individual category:)
+	print(dataset_path)
 	sketch_list = os.listdir(dataset_path)
-
+'''
 	for sketch in sketch_list :
 		#print(sketch)
 		count += 1
@@ -152,3 +154,4 @@ hist = model.fit(X_train, Y_train, batch_size=BS, epochs=EPOCHS, verbose=1, vali
 # save the model to disk
 print("[INFO] serializing network...")
 model.save(args["model"])
+'''
