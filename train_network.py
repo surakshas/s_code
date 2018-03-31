@@ -77,7 +77,7 @@ sketch_data_normalized = sketch_data_normalized.reshape(sketch_data.shape[0],img
 print(sketch_data_normalized.shape)'''
 
 #define classes 
-num_of_classes = 250
+num_of_classes = 7
 num_of_samples = sketch_data.shape[0]
 labels = np.ones((num_of_samples,), dtype ='int64')
 with open('Labels.csv', 'r') as f:
@@ -92,7 +92,7 @@ with open('Labels.csv', 'r') as f:
 #names = ['airplane', 'alarm clock', 'angel', 'ant', 'apple']
 
 
-names = ['airplane', 'alarm clock', 'angel', 'ant', 'apple', 'arm', 'armchair',
+'''names = ['airplane', 'alarm clock', 'angel', 'ant', 'apple', 'arm', 'armchair',
  'ashtray', 'axe', 'backpack', 'banana', 'barn', 'baseball bat', 'basket', 'bathtub',
  'bear (animal)', 'bed', 'bee', 'beer-mug', 'bell', 'bench', 'bicycle', 'binoculars', 
  'blimp', 'book', 'bookshelf', 'boomerang', 'bottle opener', 'bowl', 'brain', 'bread',
@@ -122,7 +122,9 @@ names = ['airplane', 'alarm clock', 'angel', 'ant', 'apple', 'arm', 'armchair',
  'tennis-racket', 'tent', 'tiger', 'tire', 'toilet', 'tomato', 'tooth', 'toothbrush', 'tractor', 
  'traffic light', 'train', 'tree', 'trombone', 'trousers', 'truck', 'trumpet', 'tv', 'umbrella', 
  'van', 'vase', 'violin', 'walkie talkie', 'wheel', 'wheelbarrow', 'windmill', 'wine-bottle', 
- 'wineglass', 'wrist-watch', 'zebra']
+ 'wineglass', 'wrist-watch', 'zebra']'''
+
+names = ['airplane', 'alarm clock', 'angel', 'ant', 'apple', 'arm', 'armchair']
 
 # convert class labels to on-hot encoding
 Y = np_utils.to_categorical(labels, num_of_classes)
