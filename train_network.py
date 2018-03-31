@@ -48,7 +48,7 @@ count = 0
 for dataset in data_list:
 	#print(dataset)
 	dataset_path = os.path.join(path, dataset)
-	print(Individual category:)
+	print("Individual category:")
 	print(dataset_path)
 	sketch_list = os.listdir(dataset_path)
 '''
