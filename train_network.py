@@ -51,8 +51,8 @@ for dataset in data_list:
 	print("Individual category:")
 	print(dataset_path)
 	sketch_list = os.listdir(dataset_path)
-'''
-	for sketch in sketch_list :
+
+'''	for sketch in sketch_list :
 		#print(sketch)
 		count += 1
 		if count%1000 == 0 :
@@ -69,7 +69,7 @@ sketch_data /= 255
 
 #dimensional ordering
 sketch_data = np.expand_dims(sketch_data, axis = 4)
-
+'''
 '''
 sketch_data_normalized = preprocessing.normalize(sketch_data) #Scale/Normlaize#
 print(sketch_data_normalized.shape)
@@ -77,7 +77,7 @@ print(sketch_data_normalized.shape)
 # dimensional ordering
 sketch_data_normalized = sketch_data_normalized.reshape(sketch_data.shape[0],img_rows, img_cols, num_channel)
 print(sketch_data_normalized.shape)'''
-
+'''
 #define classes 
 num_of_classes = 7
 num_of_samples = sketch_data.shape[0]
@@ -94,7 +94,7 @@ with open('Labels.csv', 'r') as f:
 #names = ['airplane', 'alarm clock', 'angel', 'ant', 'apple']
 
 
-'''names = ['airplane', 'alarm clock', 'angel', 'ant', 'apple', 'arm', 'armchair',
+names = ['airplane', 'alarm clock', 'angel', 'ant', 'apple', 'arm', 'armchair',
  'ashtray', 'axe', 'backpack', 'banana', 'barn', 'baseball bat', 'basket', 'bathtub',
  'bear (animal)', 'bed', 'bee', 'beer-mug', 'bell', 'bench', 'bicycle', 'binoculars', 
  'blimp', 'book', 'bookshelf', 'boomerang', 'bottle opener', 'bowl', 'brain', 'bread',
@@ -124,7 +124,7 @@ with open('Labels.csv', 'r') as f:
  'tennis-racket', 'tent', 'tiger', 'tire', 'toilet', 'tomato', 'tooth', 'toothbrush', 'tractor', 
  'traffic light', 'train', 'tree', 'trombone', 'trousers', 'truck', 'trumpet', 'tv', 'umbrella', 
  'van', 'vase', 'violin', 'walkie talkie', 'wheel', 'wheelbarrow', 'windmill', 'wine-bottle', 
- 'wineglass', 'wrist-watch', 'zebra']'''
+ 'wineglass', 'wrist-watch', 'zebra']
 
 names = ['airplane', 'alarm clock', 'angel', 'ant', 'apple', 'arm', 'armchair']
 
@@ -153,5 +153,4 @@ hist = model.fit(X_train, Y_train, batch_size=BS, epochs=EPOCHS, verbose=1, vali
 
 # save the model to disk
 print("[INFO] serializing network...")
-model.save(args["model"])
-'''
+model.save(args["model"]) '''
