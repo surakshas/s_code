@@ -53,11 +53,11 @@ for dataset in data_list:
 	sketch_list = os.listdir(dataset_path)
 
 	for sketch in sketch_list :
-		print("Sketch:")
-		print(sketch)
+		#print("Sketch:")
+		#print(sketch)
 		count += 1
 		if count%1000 == 0 :
-		    print("Count:")
+		    #print("Count:")
 		    print(count)  
 		sketch_path = os.path.join(dataset_path, sketch)
 		input_sketch = cv2.imread(sketch_path)
@@ -66,15 +66,15 @@ for dataset in data_list:
 		sketch_data_list.append(input_sketch_rf)
 
 sketch_data = np.array(sketch_data_list)
-print("\nFirst time:")
-print(sketch_data)
+#print("\nFirst time:")
+#print(sketch_data)
 sketch_data = sketch_data.astype('float32')
 sketch_data /= 255
 
 #dimensional ordering
 sketch_data = np.expand_dims(sketch_data, axis = 4)
-print("\n Second time:")
-print(sketch_data)
+#print("\n Second time:")
+#print(sketch_data)
 
 '''
 sketch_data_normalized = preprocessing.normalize(sketch_data) #Scale/Normlaize#
@@ -83,7 +83,7 @@ print(sketch_data_normalized.shape)
 # dimensional ordering
 sketch_data_normalized = sketch_data_normalized.reshape(sketch_data.shape[0],img_rows, img_cols, num_channel)
 print(sketch_data_normalized.shape)'''
-'''
+
 #define classes 
 num_of_classes = 7
 num_of_samples = sketch_data.shape[0]
@@ -159,4 +159,4 @@ hist = model.fit(X_train, Y_train, batch_size=BS, epochs=EPOCHS, verbose=1, vali
 
 # save the model to disk
 print("[INFO] serializing network...")
-model.save(args["model"]) '''
+model.save(args["model"]) 
