@@ -42,20 +42,22 @@ print("[INFO] loading images...")
 # grab the image paths and randomly shuffle them
 path = args["dataset"]
 data_list = os.listdir(path)
-print("Categories:")
-print(data_list)
+#print("Categories:")
+#print(data_list)
 count = 0
 for dataset in data_list:
 	#print(dataset)
 	dataset_path = os.path.join(path, dataset)
-	print("Individual category:")
-	print(dataset_path)
+	#print("Individual category path:")
+	#print(dataset_path)
 	sketch_list = os.listdir(dataset_path)
 
-'''	for sketch in sketch_list :
-		#print(sketch)
+	for sketch in sketch_list :
+		print("Sketch:")
+		print(sketch)
 		count += 1
 		if count%1000 == 0 :
+		    print("Count:")
 		    print(count)  
 		sketch_path = os.path.join(dataset_path, sketch)
 		input_sketch = cv2.imread(sketch_path)
@@ -64,12 +66,16 @@ for dataset in data_list:
 		sketch_data_list.append(input_sketch_rf)
 
 sketch_data = np.array(sketch_data_list)
+print("\nFirst time:")
+print(sketch_data)
 sketch_data = sketch_data.astype('float32')
 sketch_data /= 255
 
 #dimensional ordering
 sketch_data = np.expand_dims(sketch_data, axis = 4)
-'''
+print("\n Second time:")
+print(sketch_data)
+
 '''
 sketch_data_normalized = preprocessing.normalize(sketch_data) #Scale/Normlaize#
 print(sketch_data_normalized.shape)
