@@ -85,9 +85,10 @@ sketch_data_normalized = sketch_data_normalized.reshape(sketch_data.shape[0],img
 print(sketch_data_normalized.shape)'''
 
 #define classes 
-num_of_classes = 7
+num_of_classes = 2
 num_of_samples = sketch_data.shape[0]
 labels = np.ones((num_of_samples,), dtype ='int64')
+print("Labels : ", labels)
 with open('Labels.csv', 'r') as f:
 	reader = csv.reader(f, delimiter = ',')
 	for row in reader:
@@ -96,10 +97,11 @@ with open('Labels.csv', 'r') as f:
 		end = int(row[2])
 		labels[start:end] = class_no
 		#print(start,end)
+print("Labels : ", labels)
 
-#names = ['airplane', 'alarm clock', 'angel', 'ant', 'apple']
+names = ['airplane', 'alarm clock']
 
-
+'''
 names = ['airplane', 'alarm clock', 'angel', 'ant', 'apple', 'arm', 'armchair',
  'ashtray', 'axe', 'backpack', 'banana', 'barn', 'baseball bat', 'basket', 'bathtub',
  'bear (animal)', 'bed', 'bee', 'beer-mug', 'bell', 'bench', 'bicycle', 'binoculars', 
@@ -160,3 +162,4 @@ hist = model.fit(X_train, Y_train, batch_size=BS, epochs=EPOCHS, verbose=1, vali
 # save the model to disk
 print("[INFO] serializing network...")
 model.save(args["model"]) 
+'''
