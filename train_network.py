@@ -142,7 +142,8 @@ print("Y : ", Y)
 
 #Shuffle the dataset
 x,y = shuffle(sketch_data,Y, random_state=2)
-print("x : y", x, y)
+print("x :", x)
+print("y : ", y)
 # Split the dataset
 X_train, X_test, Y_train, Y_test = train_test_split(x, y, test_size=0.2)
 
