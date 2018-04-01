@@ -26,7 +26,7 @@ ap.add_argument("-m", "--model", required=True,
 	help="path to output model")
 args = vars(ap.parse_args())
 
-# initialize the number of epochs to train for, initia learning rate,
+# initialize the number of epochs to train for, initial learning rate,
 # and batch size
 ROWS = 128
 COLS = 128
@@ -135,10 +135,12 @@ names = ['airplane', 'alarm clock', 'angel', 'ant', 'apple', 'arm', 'armchair',
  'wineglass', 'wrist-watch', 'zebra']
 
 names = ['airplane', 'alarm clock', 'angel', 'ant', 'apple', 'arm', 'armchair']
-
-# convert class labels to on-hot encoding
+'''
+# convert class labels to one-hot encoding
 Y = np_utils.to_categorical(labels, num_of_classes)
+print("Y : ", Y)
 
+'''
 #Shuffle the dataset
 x,y = shuffle(sketch_data,Y, random_state=2)
 # Split the dataset
