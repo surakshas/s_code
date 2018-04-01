@@ -151,7 +151,6 @@ print("X_test: ", X_test)
 print("Y_train: ", Y_train)
 print("Y_test: ", Y_test)
 
-'''
 # initialize the model
 print("[INFO] compiling model...")
 model = LeNet.build(width=ROWS, height=COLS, depth=CHANNELS, classes=num_of_classes)
@@ -168,4 +167,3 @@ hist = model.fit(X_train, Y_train, batch_size=BS, epochs=EPOCHS, verbose=1, vali
 # save the model to disk
 print("[INFO] serializing network...")
 model.save(args["model"]) 
-'''
