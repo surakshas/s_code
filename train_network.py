@@ -142,13 +142,16 @@ print("Y : ", Y)
 
 #Shuffle the dataset
 x,y = shuffle(sketch_data,Y, random_state=2)
-print("x :", x)
-print("y : ", y)
+#print("x :", x)
+#print("y : ", y)
 # Split the dataset
 X_train, X_test, Y_train, Y_test = train_test_split(x, y, test_size=0.2)
+print("X_train: ", X_train)
+print("X_test: ", X_test)
+print("Y_train: ", (Y_train)
+print("Y_test: ", Y_test)
 
-
-
+'''
 # initialize the model
 print("[INFO] compiling model...")
 model = LeNet.build(width=ROWS, height=COLS, depth=CHANNELS, classes=num_of_classes)
@@ -165,4 +168,4 @@ hist = model.fit(X_train, Y_train, batch_size=BS, epochs=EPOCHS, verbose=1, vali
 # save the model to disk
 print("[INFO] serializing network...")
 model.save(args["model"]) 
-
+'''
