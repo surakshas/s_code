@@ -73,8 +73,8 @@ sketch_data /= 255
 
 #dimensional ordering
 sketch_data = np.expand_dims(sketch_data, axis = 4)
-#print("\n Second time:")
-#print(sketch_data)
+print("\n Second time:")
+print(sketch_data)
 
 '''
 sketch_data_normalized = preprocessing.normalize(sketch_data) #Scale/Normlaize#
@@ -88,7 +88,7 @@ print(sketch_data_normalized.shape)'''
 num_of_classes = 2
 num_of_samples = sketch_data.shape[0]
 labels = np.ones((num_of_samples,), dtype ='int64')
-print("Labels : ", labels)
+#print("Labels : ", labels)
 with open('Labels.csv', 'r') as f:
 	reader = csv.reader(f, delimiter = ',')
 	for row in reader:
@@ -97,7 +97,7 @@ with open('Labels.csv', 'r') as f:
 		end = int(row[2])
 		labels[start:end] = class_no
 		#print(start,end)
-print("Labels : ", labels)
+#print("Labels : ", labels)
 
 names = ['airplane', 'alarm clock']
 
@@ -140,9 +140,9 @@ names = ['airplane', 'alarm clock', 'angel', 'ant', 'apple', 'arm', 'armchair']
 Y = np_utils.to_categorical(labels, num_of_classes)
 print("Y : ", Y)
 
-'''
 #Shuffle the dataset
 x,y = shuffle(sketch_data,Y, random_state=2)
+print("x : y", x, y)
 # Split the dataset
 X_train, X_test, Y_train, Y_test = train_test_split(x, y, test_size=0.2)
 
