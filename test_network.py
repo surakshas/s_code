@@ -71,7 +71,8 @@ model = load_model(args["model"])
 index = model.predict_classes(test_image)
 result = names[index[0]]
 prob = model.predict(test_image)[0][index]
-print(model.predict(test_image))
+#print(model.predict(test_image))
+print(result, prob)
 # build the label
 label = "{}: {:.2f}%".format(result, prob[0] * 100)
 
