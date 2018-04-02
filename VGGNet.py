@@ -4,9 +4,11 @@ from keras.layers.convolutional import Convolution2D, MaxPooling2D, ZeroPadding2
 from keras.optimizers import SGD
 import cv2, numpy as np
 
-def VGG_16(weights_path=None):
+def build(width, height, depth, classes):
     model = Sequential()
-    model.add(ZeroPadding2D((1,1),input_shape=(3,224,224)))
+    inputShape = (height, width, depth)
+
+    model.add(ZeroPadding2D((1,1),input_shape= inputShape))
     model.add(Convolution2D(64, 3, 3, activation='relu'))
     model.add(ZeroPadding2D((1,1)))
     model.add(Convolution2D(64, 3, 3, activation='relu'))
