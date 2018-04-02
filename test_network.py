@@ -55,7 +55,7 @@ orig = test_image.copy()
 
 # pre-process the image for classification
 test_image=cv2.cvtColor(test_image, cv2.COLOR_BGR2GRAY)
-test_image=cv2.resize(test_image,(128,128))
+test_image=cv2.resize(test_image,(64,64))
 test_image = np.array(test_image)
 test_image = test_image.astype('float32')
 test_image /= 255
