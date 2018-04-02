@@ -74,8 +74,8 @@ sketch_data /= 255
 
 #dimensional ordering
 sketch_data = np.expand_dims(sketch_data, axis = 4)
-print("\n Second time:")
-print(sketch_data)
+#print("\n Second time:")
+#print(sketch_data)
 
 '''
 sketch_data_normalized = preprocessing.normalize(sketch_data) #Scale/Normlaize#
@@ -139,7 +139,7 @@ names = ['airplane', 'alarm clock', 'angel', 'ant', 'apple', 'arm', 'armchair']
 '''
 # convert class labels to one-hot encoding
 Y = np_utils.to_categorical(labels, num_of_classes)
-print("Y : ", Y)
+#print("Y : ", Y)
 
 #Shuffle the dataset
 x,y = shuffle(sketch_data,Y, random_state=2)
@@ -147,10 +147,10 @@ x,y = shuffle(sketch_data,Y, random_state=2)
 #print("y : ", y)
 # Split the dataset
 X_train, X_test, Y_train, Y_test = train_test_split(x, y, test_size=0.2)
-print("X_train: ", X_train)
-print("X_test: ", X_test)
-print("Y_train: ", Y_train)
-print("Y_test: ", Y_test)
+#print("X_train: ", X_train)
+#print("X_test: ", X_test)
+#print("Y_train: ", Y_train)
+#print("Y_test: ", Y_test)
 
 # initialize the model
 print("[INFO] compiling model...")
