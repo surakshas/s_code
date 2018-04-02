@@ -142,7 +142,7 @@ Y = np_utils.to_categorical(labels, num_of_classes)
 #print("Y : ", Y)
 
 #Shuffle the dataset
-x,y = shuffle(sketch_data,Y, random_state=2)
+x,y = shuffle(sketch_data,Y, random_state=10)
 print("x :", x)
 print("y : ", y)
 # Split the dataset
