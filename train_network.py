@@ -86,7 +86,7 @@ sketch_data_normalized = sketch_data_normalized.reshape(sketch_data.shape[0],img
 print(sketch_data_normalized.shape)'''
 
 #define classes 
-num_of_classes = 2
+num_of_classes = 7
 num_of_samples = sketch_data.shape[0]
 labels = np.ones((num_of_samples,), dtype ='int64')
 #print("Labels : ", labels)
@@ -100,7 +100,7 @@ with open('Labels.csv', 'r') as f:
 		#print(start,end)
 #print("Labels : ", labels)
 
-names = ['airplane', 'alarm clock']
+names = ['airplane', 'alarm clock', 'angel', 'ant', 'apple', 'arm', 'armchair']
 
 '''
 names = ['airplane', 'alarm clock', 'angel', 'ant', 'apple', 'arm', 'armchair',
