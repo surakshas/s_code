@@ -98,7 +98,7 @@ with open('Labels.csv', 'r') as f:
 		end = int(row[2])
 		labels[start:end] = class_no
 		#print(start,end)
-#print("Labels : ", labels)
+print("Labels : ", labels)
 
 names = ['airplane', 'alarm clock', 'angel', 'ant', 'apple', 'arm', 'armchair']
 
@@ -143,8 +143,8 @@ Y = np_utils.to_categorical(labels, num_of_classes)
 
 #Shuffle the dataset
 x,y = shuffle(sketch_data,Y, random_state=2)
-#print("x :", x)
-#print("y : ", y)
+print("x :", x)
+print("y : ", y)
 # Split the dataset
 X_train, X_test, Y_train, Y_test = train_test_split(x, y, test_size=0.2)
 #print("X_train: ", X_train)
