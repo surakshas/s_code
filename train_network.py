@@ -29,8 +29,8 @@ args = vars(ap.parse_args())
 
 # initialize the number of epochs to train for, initial learning rate,
 # and batch size
-ROWS = 128
-COLS = 128
+ROWS = 64
+COLS = 64
 CHANNELS = 1
 EPOCHS = 25
 INIT_LR = 1e-3
@@ -155,7 +155,7 @@ X_train, X_test, Y_train, Y_test = train_test_split(x, y, test_size=0.2)
 # initialize the model
 print("[INFO] compiling model...")
 #model = LeNet.build(width=ROWS, height=COLS, depth=CHANNELS, classes=num_of_classes)
-model = VGG.build(width=ROWS, height=COLS, depth=CHANNELS, classes=num_of_classes)
+model = LeNet.build(width=ROWS, height=COLS, depth=CHANNELS, classes=num_of_classes)
 opt = Adam(lr=INIT_LR, decay=INIT_LR / EPOCHS)
 model.compile(loss=categorical_crossentropy,
               optimizer=opt,
